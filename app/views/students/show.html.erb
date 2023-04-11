@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+  html, body {
+    background-color: orange;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  #content {
+    max-width: 600px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    padding: 20px;
+    /* box-sizing: border-box; */
+    text-align: center;
+  }
+  h1{
+    color :red
+  }
+</style>
+
+<div id="content">
+  <h1>Student Details</h1>
+  <p><strong>Name: </strong><%= @student.name %></p>
+  <p><strong>Registration Number: </strong><%= @student.regno %></p>
+  <p><strong>Email: </strong><%= @student.email %></p>
+  <p><strong>Phone Number: </strong><%= @student.phonenumber %></p>
+  <p><strong>Department: </strong><%= @student.dept %></p>
+  <p><strong>Date of Birth: </strong><%= @student.date_of_birth %></p>
+
+ <%= link_to 'Back', students_path, class: "btn btn-danger"  %>
+<%= link_to 'Edit', edit_student_path(@student), class: "btn btn-success"  %>
+
+</div>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Vakilsearch</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: orange;
+      }
+      .navbar {
+        background-color: #fff;
+      }
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .nav-link {
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+      }
+     .jumbotron {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAG-mclZI1N8bw3yRAXL7D5pkd5wEfGu7MVA&usqp=CAU');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+
+      .jumbotron h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color:red;
+      }
+     .jumbotron p {
+  animation: scroll 20s linear infinite;
+  color:skyblue;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+      .btn-signup {
+        background-color: red;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .btn-login {
+        background-color: green;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .img-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .img-thumbnail {
+        width: 400px;
+        height: 300px;
+        margin: 10px;
+        overflow: hidden;
+      }
+      .img-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+      .img-thumbnail:hover img {
+        transform: scale(1.2);
+      }
+      .contact-details {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 30px;
+      }
+      .contact-icon {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+   <nav class="navbar navbar-dark bg-primary">
+      <div class="container">
+       <a class="navbar-brand" href="#">
+          <img src="data:image/png;base64,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" alt="Vakilsearch" width="150">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+</ul>
+        </div>
+      </div>
+    </nav>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to Vakilsearch</h1>
+    <p>We provide a wide range of legal solutions for businesses and individuals.</p>
+  <a href="/login"><button class="btn btn-login">Login</button></a>
+<a href="/signup"><button class="btn btn-signup">Signup</button></a>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row img-gallery">
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+      <a href="https://static.ambitionbox.com/alpha/company/photos/company_159719/photos/23a9d4e8163b019acfba6ed525f473d6d2700b9f.jpg" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://static.ambitionbox.com/alpha/company/photos/company_159719/photos/23a9d4e8163b019acfba6ed525f473d6d2700b9f.jpg" alt="Image 1">
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+       <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5oiJ6w3zEwU5OTtkSU9A7i7U1IRskuORvQ&usqp=CAU" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5oiJ6w3zEwU5OTtkSU9A7i7U1IRskuORvQ&usqp=CAU" alt="Image 2">
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+     <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhk9kbPUbGzbtgdgTXBte6sui3aekOv4Pfg&usqp=CAU" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhk9kbPUbGzbtgdgTXBte6sui3aekOv4Pfg&usqp=CAU" alt="Image 3">
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+        <a href="#">
+           <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjaRiRhWED5YYpTRl0eGETbPolCzASAiMzhA&usqp=CAU" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjaRiRhWED5YYpTRl0eGETbPolCzASAiMzhA&usqp=CAU" alt="Image 4">
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+       <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd-u83O3C3B6ttPvZmzmtN40ylHEyQNvBRaA&usqp=CAU" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd-u83O3C3B6ttPvZmzmtN40ylHEyQNvBRaA&usqp=CAU" alt="Image 5">
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="img-thumbnail">
+        <a href="https://tse4.mm.bing.net/th?id=OIP.KODAoOM0imChn5JFF0tsJwHaDt&pid=Api&P=0" data-lightbox="image-set-1" data-title="Image 2">
+          <img src="https://tse4.mm.bing.net/th?id=OIP.KODAoOM0imChn5JFF0tsJwHaDt&pid=Api&P=0" alt="Image 6">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Include jQuery and Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  </body>
+</html>

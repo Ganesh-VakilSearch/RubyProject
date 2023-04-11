@@ -1,0 +1,54 @@
+<%= form_with model: @student do |form| %>
+  <% if @student.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% @student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, value: @student.name %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :regno %>
+    <%= form.text_field :regno, value: @student.regno %>
+  </div>
+  <br>
+  <div> 
+    <%= form.label :email %>
+    <%= form.email_field :email, value: @student.email %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :phonenumber %>
+    <%= form.text_field :phonenumber, type: :tel, value: @student.phonenumber %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :dept %>
+    <%= form.text_field :dept, value: @student.dept %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth, value: @student.date_of_birth %>
+  </div>
+  <br>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<style>
+  html, body {
+    background-color: orange;
+  }
+</style>
