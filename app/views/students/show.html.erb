@@ -28,7 +28,7 @@
   <p><strong>Phone Number: </strong><%= @student.phonenumber %></p>
   <p><strong>Department: </strong><%= @student.dept %></p>
   <p><strong>Date of Birth: </strong><%= @student.date_of_birth %></p>
-
+<p><strong>Date of Birth: </strong><%= formatted_date(@student.date_of_birth) %></p>
  <%= link_to 'Back', students_path, class: "btn btn-danger"  %>
 <%= link_to 'Edit', edit_student_path(@student), class: "btn btn-success"  %>
 

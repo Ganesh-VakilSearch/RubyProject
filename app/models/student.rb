@@ -19,6 +19,9 @@ class Student < ApplicationRecord
   #     end
   #   end
   # end
+
+  scope :by_dept, ->(dept_name) { where(dept: dept_name) }
+
   def validate_student_age
     return unless date_of_birth.present?
 
