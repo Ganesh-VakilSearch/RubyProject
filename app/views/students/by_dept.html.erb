@@ -1,0 +1,14 @@
+<h1>Students in <%= params[:department] %> department</h1>
+
+<% if @students.any? %>
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= student.name %> (<%= student.regno %>)</li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No students found in <%= params[:department] %> department</p>
+<% end %>
+
+<%= link_to 'View Computer Science students', by_dept_student_path('Mech') %>
+ 

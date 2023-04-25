@@ -41,6 +41,11 @@
     <%= form.date_field :date_of_birth, value: @student.date_of_birth %>
   </div>
   <br>
+  <div>
+    <%= form.label :profile_image %>
+    <%= form.file_field :profile_image %>
+  </div>
+  <br>
   <br>
   <div>
     <%= form.submit %>

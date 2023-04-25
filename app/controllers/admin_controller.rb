@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
-  def index
-  end
+  def index; end
+
+  def signout; end
 end

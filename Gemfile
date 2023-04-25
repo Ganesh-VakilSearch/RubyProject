@@ -2,6 +2,10 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
+
+gem 'kaminari'
+
+
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'devise'
@@ -71,4 +75,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  
 end

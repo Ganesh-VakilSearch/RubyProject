@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  paginates_per 3
+  has_one_attached :profile_image
   validates :name, :regno, :email, :phonenumber, :dept, :date_of_birth, presence: true
   validates :email, :phonenumber, uniqueness: true
   validates :name, format: { with: /|A[a-zA-Z]+\z/, message: 'only letters are allowed' }
@@ -15,7 +17,7 @@ class Student < ApplicationRecord
   #       age = Date.today.year - date_of_birth.year
   #       puts "===================Age of the student is #{age}=================="
   #     else
-  #       puts 'Age cannot be calculated without date_of_birth'
+  #       puts 'Age cannot be calculated without date_of_sbirth'
   #     end
   #   end
   # end
