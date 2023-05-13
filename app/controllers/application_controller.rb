@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :set_current_user
+
   def after_sign_in_path_for(_resource)
     signout_path
   end
@@ -21,4 +23,10 @@ class ApplicationController < ActionController::Base
     puts '================================================================================'
     puts '-------------------Iam inherited after action filter----------------------------'
   end
+
+  def set_current_user
+    @current_user = Use.find_by(id: session[:user_id])
+  end
+
+  attr_reader :current_user
 end

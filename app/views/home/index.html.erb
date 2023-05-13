@@ -120,8 +120,15 @@
               <a class="nav-link" href="/admin_users/sign_in">Admin Signin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admin_users/sign_up">Admin Signup</a>
-            </li>
+  <a class="nav-link" href="/admin_users/sign_up" id="admin-signup-link">Admin Signup</a>
+</li>
+
+     
+
+<li class="nav-item">
+  <%= link_to 'Invite Friends', '/invite', class: 'nav-link' %>
+</li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
             </li>
@@ -196,5 +203,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+   
+
+   <script>
+  function checkPassword() {
+    const password = prompt("Please enter the password:");
+
+    if (password === "ganesh") {
+      window.location.href = "/admin_users/sign_up";
+    } else {
+      alert("Wrong password! Please try again.");
+    }
+  }
+
+  document.getElementById("admin-signup-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    checkPassword();
+  });
+</script>
+
   </body>
 </html>

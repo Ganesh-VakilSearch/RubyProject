@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   devise_for :admin_users
+  get '/invite', to: 'friend_invitations#new', as: 'friend_invitation'
+  post '/invite', to: 'friend_invitations#create', defaults: { format: :json }
 
   root 'home#index'
+  resources :contact
   resources :courses
   get 'welcome/index'
   get 'admin/index'
   get '/signout', to: 'admin#signout'
   get '/login', to: 'home#login'
+  get 'signup', to: 'home#signup'
   post '/welcome/index', to: 'welcome#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")

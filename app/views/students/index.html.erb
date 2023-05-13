@@ -3,7 +3,7 @@
 <head>
   <title>Listing Students</title>
  <%= link_to 'New Student', new_student_path, class: 'btn btn-primary' %>
-
+<%= link_to 'Invite Friends', '/invite', class: 'btn btn-success' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -56,9 +56,16 @@
       <%= text_field_tag :dept, params[:dept], placeholder: "Search by Department" %>
       <%= submit_tag "Search", class: "btn btn-success" %>
     <% end %>
+    
   </div>
 
+  
+<div>
   <%= link_to 'Display All Students', students_path, class: 'btn btn-danger' %>
+   
+
+  
+</div>
 </div>
 
 
